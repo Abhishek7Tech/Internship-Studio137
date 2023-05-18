@@ -3,8 +3,7 @@ import "./Card.css";
 import * as React from "react";
 import { ThemeProvider } from "@emotion/react";
 import theme from "../../theme";
-import Box from "@mui/material/Box";
-import LinearProgress from "@mui/material/LinearProgress";
+
 import { SliderContext } from "../../contexts/SliderContext";
 import LinearSlider from "../linearslider/LinearSlider";
 function Card() {
@@ -17,7 +16,11 @@ function Card() {
         <ul id="category_list">
           <li id="category_item">
             <LinearSlider progress={question + 1}></LinearSlider>
-            <h2 id={question > 3 ?"category_heading": "category_heading_active"}>IDEALISTIC</h2>
+            <h2
+              id={question > 3 ? "category_heading" : "category_heading_active"}
+            >
+              IDEALISTIC
+            </h2>
           </li>
           <li id="category_item">
             <LinearSlider progress={0}></LinearSlider>
@@ -40,7 +43,7 @@ function Card() {
         {questionsArray.map((que) => {
           return (
             que.number === question && (
-              <>
+              <div key={que.number}>
                 <section id="questions">
                   <h2 id="question_number">
                     {question + 1} / {questionsArray.length}
@@ -53,7 +56,7 @@ function Card() {
                     <SliderBar number={que.number}></SliderBar>
                   </ThemeProvider>
                 </section>
-              </>
+              </div>
             )
           );
         })}
