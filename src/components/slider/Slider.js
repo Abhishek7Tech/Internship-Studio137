@@ -28,8 +28,9 @@ const marks = [
   },
 ];
 
-function SliderBar() {
-const {question, slider,sliderHandler} = React.useContext(SliderContext);
+function SliderBar(props) {
+  const { question, slider, sliderHandler, questionsArray } =
+    React.useContext(SliderContext);
   const sliderThumb = {
     color: "white",
     border: "5px solid #20adb4",
@@ -70,6 +71,15 @@ const {question, slider,sliderHandler} = React.useContext(SliderContext);
     return `${value}`;
   }
 
+  function sliderValueHandler(e) {
+    const value = e.target.value;
+     questionsArray.map((que) =>
+      que.number === props.number ? (que.answer = value) : que
+    );
+    console.log("NEW", questionsArray);
+    console.log(value);
+  }
+
   const theme = useTheme();
   return (
     <div onClick={sliderHandler}>
@@ -84,8 +94,9 @@ const {question, slider,sliderHandler} = React.useContext(SliderContext);
           }}
         >
           <Slider
+            onChange={sliderValueHandler}
             aria-label="Custom marks"
-            defaultValue={question}
+            defaultValue={questionsArray[question].answer}
             getAriaValueLabel={valuetext}
             step={25}
             valueLabelDisplay="off"
@@ -106,8 +117,9 @@ const {question, slider,sliderHandler} = React.useContext(SliderContext);
           }}
         >
           <Slider
+            onChange={sliderValueHandler}
             aria-label="Custom marks"
-            defaultValue={question}
+            defaultValue={questionsArray[question].answer}
             getAriaValueLabel={valuetext}
             step={25}
             valueLabelDisplay="off"

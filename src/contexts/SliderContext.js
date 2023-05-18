@@ -12,7 +12,8 @@ export const SliderProvider = ({ children }) => {
   const [slider, setSlider] = useState(false);
   const [question, setQuestion] = useState(0);
 
-  const sliderHandler = () => {
+  const sliderHandler = (e) => {
+    e.preventDefault();
     setSlider(!slider);
   };
   function nextBtnHandler(e) {
@@ -31,7 +32,7 @@ export const SliderProvider = ({ children }) => {
       setQuestion(question - 1);
     }
   }
-  const questionsArray = questions;
+  let questionsArray = questions;
 
   const value = { slider, sliderHandler, questionsArray, question,nextBtnHandler, previousButtonHandler};
   return (

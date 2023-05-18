@@ -1,4 +1,4 @@
-const questions = [
+let questions = [
   {
     number: 0,
     category:"Idealistic",

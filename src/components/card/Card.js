@@ -5,7 +5,8 @@ import { ThemeProvider } from "@emotion/react";
 import theme from "../../theme";
 import { SliderContext } from "../../contexts/SliderContext";
 function Card() {
-  const {question,questionsArray, nextBtnHandler, previousButtonHandler, sliderHandler} = React.useContext(SliderContext);
+  const { question, questionsArray, nextBtnHandler, previousButtonHandler } =
+    React.useContext(SliderContext);
   // function nextBtnHandler(e) {
   //   console.log("Clicked");
   //   e.preventDefault();
@@ -24,7 +25,7 @@ function Card() {
 
   // function sliderHandler() {
   //   setSlider(!slider);
-    
+
   // }
   return (
     <main id="card">
@@ -38,18 +39,26 @@ function Card() {
       </section>
 
       <div>
-        <section id="questions">
-          <h2 id="question_number">
-            {question + 1} / {questionsArray.length}
-          </h2>
-          <h3>{questionsArray[question].qustion}</h3>
-        </section>
-        <section id="slider" onClick={nextBtnHandler}>
-          <ThemeProvider theme={theme}>
-            <SliderBar
-            ></SliderBar>
-          </ThemeProvider>
-        </section>
+        {questionsArray.map((que) => {
+          return (
+            que.number === question && (
+              <>
+                <section id="questions">
+                  <h2 id="question_number">
+                    {question + 1} / {questionsArray.length}
+                  </h2>
+
+                  <h3>{que.qustion}</h3>
+                </section>
+                <section id="slider" onClick={nextBtnHandler}>
+                  <ThemeProvider theme={theme}>
+                    <SliderBar number={que.number}></SliderBar>
+                  </ThemeProvider>
+                </section>
+              </>
+            )
+          );
+        })}
         <section id="button_section">
           <button onClick={previousButtonHandler} id="previous-btn">
             &larr; Previous
