@@ -29,7 +29,7 @@ const marks = [
 ];
 
 function SliderBar(props) {
-  const { question, slider, sliderHandler, questionsArray } =
+  const { question,slider, sliderHandler, questionsArray } =
     React.useContext(SliderContext);
   const sliderThumb = {
     color: "white",
@@ -72,10 +72,12 @@ function SliderBar(props) {
   }
 
   function sliderValueHandler(e) {
+    e.preventDefault();
     const value = e.target.value;
      questionsArray.map((que) =>
       que.number === props.number ? (que.answer = value) : que
     );
+   
     console.log("NEW", questionsArray);
     console.log(value);
   }
