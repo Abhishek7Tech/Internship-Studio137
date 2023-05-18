@@ -1,0 +1,40 @@
+#card {
+  background-color: white;
+  padding-left: 5rem;
+}
+#slider {
+  background-color: white;
+}
+
+#button_section{
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  display: flex;
+ 
+}
+
+#previous-btn{
+  width: 8rem;
+  height: 2rem;
+  text-align: center;
+  background-color: white;
+  border: none;  
+}
+
+#previous-btn:hover{
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+#next-btn{
+  width: 8rem;
+  height: 2rem;
+  text-align: center;
+  background-color: white;
+  border: none;
+}
+
+#next-btn:hover{
+  background-color: whitesmoke;
+  cursor: pointer;
+}

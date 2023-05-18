@@ -1,0 +1,43 @@
+.slider {
+  height: 5rem;
+  background-color: white;
+}
+.customSlider {
+  max-width: 300px;
+  margin: auto;
+}
+
+.customSlider-track {
+  top: 8px;
+  height: 4px;
+  background: rgb(195, 194, 194);
+}
+
+.customSlider-track {
+  /* color of the track before the thumb */
+  background: #8fcbd3;
+}
+
+.customSlider-thumb {
+  cursor: pointer;
+  /*color for the thumb */
+  background: white;
+  /* shape of the thumb: circle */
+  height: 20px;
+  border-radius: 100%;
+  /* remove default outline when selected */
+  width: 20px;
+  outline: none;
+}
+
+.customSlider-thumb:hover {
+  box-shadow: 0 0 0 8px #8fcbd3;
+}
+
+.customSlider-mark{
+    cursor: pointer;
+    top: 6px;
+    width: 1.5px;
+    border: 2px solid rgb(117, 116, 116);
+    border-radius: 50%;
+}
