@@ -84,15 +84,20 @@ function SliderBar(props) {
 
   const theme = useTheme();
   return (
-    <div onClick={sliderHandler}>
+    <div onClick ={sliderHandler}>
       {slider ? (
         <Box
           sx={{
-            width: 500,
+            width: 800,
+            marginLeft:"5rem",
             color: theme.palette.primary,
             "& .MuiSlider-thumb": sliderThumb,
             "& .MuiSlider-mark": sliderMark,
             "& .MuiSlider-track": sliderTrack,
+            "& .MuiSlider-markLabel":{
+              fontSize:"1.3rem",
+              color:"black"   
+           },
           }}
         >
           <Slider
@@ -108,11 +113,16 @@ function SliderBar(props) {
       ) : (
         <Box
           sx={{
-            width: 500,
+            width: 800,
+            marginLeft:"5rem",
             color: theme.palette.primary,
             "& .MuiSlider-thumb": noSLiderThumb,
             "& .MuiSlider-mark": sliderMark,
             "& .MuiSlider-track": noSliderTrack,
+            "& .MuiSlider-markLabel":{
+               fontSize:"1.3rem",
+               color:"black"   
+            },
             "& .MuiSlider-markActive": {
               backgroundColor: "#757575",
             },

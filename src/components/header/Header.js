@@ -3,7 +3,7 @@ import "./Header.css";
 function Header() {
   return (
     <header id="header">
-      <h1 id="header_heading">ARE YOU DISILLUSIONED?</h1>
+      <h2 id="header_heading">ARE YOU DISILLUSIONED?</h2>
     </header>
   );
 }
