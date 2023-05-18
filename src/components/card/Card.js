@@ -46,7 +46,7 @@ function Card() {
               <div key={que.number}>
                 <section id="questions">
                   <h2 id="question_number">
-                    {question + 1} / {questionsArray.length}
+                    <strong>{question + 1}</strong> / {questionsArray.length}
                   </h2>
 
                   <h2 id="question">{que.qustion}</h2>

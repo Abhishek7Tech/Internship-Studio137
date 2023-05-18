@@ -27,6 +27,10 @@
   width: 12rem;
 }
 
+#question_number{
+  font-weight: 400;
+}
+
 #category_heading{
   font-weight: 400;
 }
